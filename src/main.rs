@@ -34,4 +34,8 @@ async fn main(){
         key: "key".to_string(),
     }).send().await;
     println!("get_rpc again {:?}", resp.unwrap().text().await);
+    let resp = client.post(format!("{}/del_rpc", addr)).form(&FormKey{
+        key: "key".to_string(),
+    }).send().await;
+    println!("del_rpc again {:?}", resp.unwrap().text().await);
 }
